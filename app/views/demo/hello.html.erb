@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+    <h1>Hello from Hello!</h1>
+
+    <% @array.each do |name| %>
+        <%= name %> <br>
+    <%end%>
+
+    <%= link_to('Hello Index!', {:controller => 'demo', :action => 'index'}) %>
+
+    <br>
+
+    ID: <%= @id%><br>
+    Page: <%= @page%><br>
+    Next Page: <%= @page + 1%><br>
+    
+    <hr>
+    <%= params.inspect%>
+
+</body>
+</html>

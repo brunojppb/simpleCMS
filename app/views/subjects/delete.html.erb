@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subject Delete</title>
+</head>
+<body>
+    <%= link_to("Back to List", {:action => 'index'}, :class => 'back-link') %>
+    <div class="subjects edit">
+        
+        <%= form_for(:subject, :url => {:action => 'destroy', :id => @subject.id }) do |f| %>
+        <br> <%=  @subject.name %> </br>
+        <%= submit_tag("Delete Subject") %>
+
+        <% end %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pages - Index</title>
+</head>
+<body>
+
+    <% if !flash[:notice].blank? %>
+        <div><%= flash[:notice] %></div>
+    <% end %>
+
+    <div class="pages index">
+        <h2>Pages</h2>
+        <%= link_to("Add new Page",  {:action => 'new'}, :class => 'action new') %>
+
+        <table class="listing" summary="Page list">
+            <tr class="header">
+                <th>&nbsp;</th>
+                <th>Page</th>
+                <th>Visible</th>
+                <th>Editors</th>
+                <th>Actions</th>
+            </tr>
+            <%@pages.each do |p|%>
+            <tr>
+                <td><%= p.position %></td>
+                <td><%= p.name %></td>
+                <td class="center"><%= p.visible ? 'Yes' : 'No' %></td>
+                <td class="center"><%= p.editors.size %></td>
+                <td class="actions">
+                    <%= link_to("Show", {:action => 'show', :id => p.id }, :class => 'action show') %>
+                    <%= link_to("Edit", {:action => 'edit', :id => p.id }, :class => 'action edit') %>
+                    <%= link_to("Delete", {:action => 'delete', :id => p.id }, :class => 'action delete') %>
+                </td>
+            </tr>
+            <%end%>
+        </table>
+    </div>
+</body>
+</html>

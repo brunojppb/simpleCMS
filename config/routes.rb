@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
+  get 'pages/show'
+
+  get 'pages/new'
+
+  get 'pages/edit'
+
+  get 'pages/delete'
+
   #get 'demo/index'
 
   root "demo#index"

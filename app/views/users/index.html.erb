@@ -1,0 +1,26 @@
+    <%= @page_title = "Subjects" %>
+    <div class="users index">
+        <h2>Subjects</h2>
+        <%= link_to( image_tag('plus_sign.png', :size => '11x11', :alt => '+') + " Add new User",  {:action => 'new'}, :class => 'action new') %>
+
+        <table class="listing" summary="User list">
+            <tr class="header">
+                <th>User</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            <%@users.each do |u|%>
+            <tr>
+                <td class="center"><%= u.id %></td>
+                <td class="center"><%= u.name %></td>
+                <td class="center"><%= u.email %></td>
+                <td class="actions">
+                    <%= link_to("Show", {:action => 'show', :id => u.id }, :class => 'action show') %>
+                    <%= link_to("Edit", {:action => 'edit', :id => u.id }, :class => 'action edit') %>
+                    <%= link_to("Delete", {:action => 'delete', :id => u.id }, :class => 'action delete') %>
+                </td>
+            </tr>
+            <%end%>
+        </table>
+    </div>

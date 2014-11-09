@@ -1,7 +1,7 @@
 <table summary="Page form fields">
     
     <tr>
-        <th><%= p.label(:subject_id, "Page ID") %></th>
+        <th><%= p.label(:subject_id, "Subject ID") %></th>
         <td><%= p.select(:subject_id, @subjects.map {|s|  [s.name, s.id] }) %></td>
     </tr>
 

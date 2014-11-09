@@ -1,0 +1,9 @@
+    <%= link_to("Back to List", {:action => 'index'}, :class => 'back-link') %>
+    <div class="users edit">
+        
+        <%= form_for(:user, :url => {:action => 'destroy', :id => @user.id }) do |f| %>
+        <br> <%=  @user.name %> </br>
+        <%= submit_tag("Delete user") %>
+
+        <% end %>
+    </div>

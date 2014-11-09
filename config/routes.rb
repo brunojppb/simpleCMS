@@ -1,15 +1,9 @@
 Rails.application.routes.draw do
-  get 'pages/index'
-
-  get 'pages/show'
-
-  get 'pages/new'
-
-  get 'pages/edit'
-
-  get 'pages/delete'
 
   #get 'demo/index'
+
+  # get to myapp.com/admin go to controller access controller and index action
+  get 'admin', :to => "access#index"
 
   root "demo#index"
 

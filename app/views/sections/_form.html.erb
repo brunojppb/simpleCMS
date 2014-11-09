@@ -1,0 +1,25 @@
+<table summary="section form fields">
+    <tr>
+        <th><%= s.label(:name, "Name") %></th>
+        <td><%= s.text_field(:name) %></td>
+    </tr>
+    <tr>
+        <th><%= s.label(:position) %></th>
+        <td><%= s.text_field(:position) %></td>
+    </tr>
+    <tr>
+        <th><%= s.label(:content_type) %></th>
+        <td>
+            <%= s.radio_button(:content_type, "text") %> Text
+            <%= s.radio_button(:content_type, "HTML") %> HTML
+        </td>
+    </tr>
+    <tr>
+        <th><%= s.label(:visible) %></th>
+        <td><%= s.check_box(:visible) %></td>
+    </tr>
+    <tr>
+        <th><%= s.label(:content) %></th>
+        <td><%= s.text_area(:content, :size => '40x10') %></td>
+    </tr>
+</table>

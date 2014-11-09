@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
 
-  layout false
+  layout "admin"
+
+  before_action :confirm_logged_in
 
   def index
     @pages = Page.all.order('pages.position ASC')
@@ -12,6 +14,8 @@ class PagesController < ApplicationController
 
   def new
     @page = Page.new
+    @subjects = Subject.all.order('position ASC')
+    @page_count = Page.count + 1
   end
 
   def create
@@ -20,12 +24,16 @@ class PagesController < ApplicationController
       flash[:notice] = "Page saved successfully."
       redirect_to(:action => 'index')
     else
+      @subjects = Subject.all.order('position ASC')
+      @page_count = Page.count
       render('new')
     end
   end
 
   def edit
     @page = Page.find_by_id(params[:id])
+    @subjects = Subject.all.order('position ASC')
+    @page_count = Page.count
   end
 
   def update
@@ -35,6 +43,8 @@ class PagesController < ApplicationController
       redirect_to(:action => 'show', :id => @page.id)
     else
       flash[:notice] = "Error! try again."
+      @subjects = Subject.all.order('position ASC')
+      @page_count = Page.count
       render('edit')
     end
   end
@@ -57,7 +67,7 @@ class PagesController < ApplicationController
   private
 
     def page_params
-      params.require(:page).permit(:name, :permalink, :position, :visible)
+      params.require(:page).permit(:name, :permalink, :position, :visible, :subject_id)
     end
 
 end

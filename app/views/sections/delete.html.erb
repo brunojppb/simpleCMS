@@ -1,0 +1,10 @@
+
+    <%= link_to("Back to List", {:action => 'index'}, :class => 'back-link') %>
+    <div class="subjects edit">
+        
+        <%= form_for(:section, :url => {:action => 'destroy', :id => @section.id }) do |s| %>
+        <br> <%=  @section.name %> </br>
+        <%= submit_tag("Delete section") %>
+
+        <% end %>
+    </div>

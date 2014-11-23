@@ -1,5 +1,5 @@
 
-    <%= link_to("Back to List", {:action => 'index'}, :class => 'back-link') %>
+    <%= link_to("Back to List", {:action => 'index', :subject_id => @subject.id}, :class => 'back-link')%>
     <div class="pages show">
         <table summary="Page detail view">
             <tr>
@@ -13,6 +13,10 @@
             <tr>
                 <th>Visible?</th>
                 <td><%= @page.visible ? 'Yes' : 'No' %></td>
+            </tr>
+            <tr>
+                <th>Permalink</th>
+                <td><%= @page.permalink %></td>
             </tr>
             <tr>
                 <th>Created</th>

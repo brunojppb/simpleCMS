@@ -26,11 +26,12 @@ Rails.application.routes.draw do
   #   resources :products
 
   # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
+    # resources :pages do
+    #   member do
+    #     get 'index'
+    #     post 'create'
+    #   end
+    # end
   #
   #     collection do
   #       get 'sold'

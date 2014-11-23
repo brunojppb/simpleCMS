@@ -1,7 +1,9 @@
 class Subject < ActiveRecord::Base
 
-    has_many :pages
+    has_many :pages, :dependent => :destroy
 
+
+    acts_as_list
 
     #Custom Queries
     scope :visible, lambda { where(:visible => true) }

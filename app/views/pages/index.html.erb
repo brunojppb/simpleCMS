@@ -1,7 +1,7 @@
 
     <div class="pages index">
         <h2>Pages</h2>
-        <%= link_to("Add new Page",  {:action => 'new'}, :class => 'action new') %>
+        <%= link_to("Add new Page",  {:action => 'new', :subject_id => @subject.id}, :class => 'action new' )%>
 
         <table class="listing" summary="Page list">
             <tr class="header">
@@ -18,9 +18,9 @@
                 <td class="center"><%= p.visible ? 'Yes' : 'No' %></td>
                 <td class="center"><%= p.editors.size %></td>
                 <td class="actions">
-                    <%= link_to("Show", {:action => 'show', :id => p.id }, :class => 'action show') %>
-                    <%= link_to("Edit", {:action => 'edit', :id => p.id }, :class => 'action edit') %>
-                    <%= link_to("Delete", {:action => 'delete', :id => p.id }, :class => 'action delete') %>
+                    <%= link_to("Show", {:action => 'show', :id => p.id, :subject_id => @subject.id}, :class => 'action show') %>
+                    <%= link_to("Edit", {:action => 'edit', :id => p.id, :subject_id => @subject.id}, :class => 'action edit') %>
+                    <%= link_to("Delete", {:action => 'delete', :id => p.id, :subject_id => @subject.id}, :class => 'action delete')%>
                 </td>
             </tr>
             <%end%>
